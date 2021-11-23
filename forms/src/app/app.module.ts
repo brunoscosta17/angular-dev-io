@@ -1,33 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './navegacao/menu/menu.component';
-import { HomeComponent } from './navegacao/home/home.component';
-import { FooterComponent } from './navegacao/footer/footer.component';
-import { SobreComponent } from './institucional/sobre/sobre.component';
-import { rootRouterConfig } from './app.routes';
+import { AboutComponent } from './institucional/about/about.component';
+import { FooterComponent } from './navigation/footer/footer.component';
+import { HomeComponent } from './navigation/home/home.component';
+import { MenuComponent } from './navigation/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    HomeComponent,
+    AboutComponent,
     FooterComponent,
-    SobreComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     FormsModule,
-    [RouterModule.forRoot(rootRouterConfig, { useHash: false})]
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule
   ],
-  providers: [
-    {provide: APP_BASE_HREF, useValue: '/'}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
