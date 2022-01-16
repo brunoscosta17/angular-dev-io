@@ -3,27 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './institucional/about/about.component';
-import { FooterComponent } from './navigation/footer/footer.component';
-import { HomeComponent } from './navigation/home/home.component';
-import { MenuComponent } from './navigation/menu/menu.component';
+import { NavigationModule } from './navigation/navigation.module';
+import { RegisterComponent } from './institucional/register/register.component';
+import { ProductsComponent } from './institucional/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    FooterComponent,
-    HomeComponent,
-    MenuComponent
+    RegisterComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavigationModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
