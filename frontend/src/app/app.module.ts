@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './institucional/about/about.component';
@@ -23,7 +25,8 @@ import { ProductsComponent } from './institucional/products/products.component';
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
-    NavigationModule 
+    NavigationModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

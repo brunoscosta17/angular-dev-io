@@ -4,13 +4,17 @@ import { AboutComponent } from './institucional/about/about.component';
 import { ProductsComponent } from './institucional/products/products.component';
 import { RegisterComponent } from './institucional/register/register.component';
 import { HomeComponent } from './navigation/home/home.component';
+import { NotFoundComponent } from './navigation/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'products', component: ProductsComponent }
+  { path: 'products', component: ProductsComponent },
+  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -18,3 +22,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 
