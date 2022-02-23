@@ -64,13 +64,22 @@ export class RegisterComponent extends FormBaseComponent implements OnInit {
       this.user = Object.assign({}, this.user, this.form.value);
 
       this.accountService.registerUser(this.user)
-      //   .subscribe(
-      //     sucesso => { this.processarSucesso(sucesso) },
-      //     falha => { this.processarFalha(falha) }
-      //   );
+        .subscribe(
+          success => { this.processSuccess(success) },
+          error => { this.processError(error) }
+        );
 
       // this.mudancasNaoSalvas = false;
     }
   }
+
+  processSuccess(response: any) {
+
+  }
+
+  processError(error: any) {
+
+  }
+
 
 }
